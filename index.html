@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Babuu 🥺</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffc1cc, #ffe0f0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    background: rgba(255,255,255,0.95);
+    padding: 25px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    transform: scale(0.95);
+}
+
+.container.show { animation: fadeInScale 0.7s forwards; }
+
+h1 { color: #ff4d6d; font-size: 26px; margin-bottom: 10px; }
+p { font-size: 16px; color: #444; line-height: 1.6; }
+.shayari { font-style: italic; color: #ff4d6d; margin-top: 10px; text-shadow: 0 0 10px rgba(255,77,109,0.9); animation: bounce 1.2s infinite; }
+
+.button-group { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+
+.btn {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255,77,109,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(255,77,109,0.6); }
+
+.next { background: #ff4d6d; color: white; }
+.forgive { background: #ff758c; color: white; animation: pulse 1.5s infinite; }
+.dont { background: #d9534f; color: white; animation: shake 0.8s infinite; }
+
+.hidden { display: none; }
+.typing { white-space: pre-line; }
+
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes fadeInScale { 0% { opacity:0; transform:scale(0.8); } 100% { opacity:1; transform:scale(1); } }
+@keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-5px);} }
+@keyframes pulse { 0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);} }
+@keyframes shake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-5px);} 75%{transform:translateX(5px);} }
+
+.magic {
+    position: fixed;
+    animation: float 5s linear forwards;
+    pointer-events: none;
+    font-size: 20px;
+}
+@keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-700px) scale(1.3); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- STEPS -->
+<div class="container" id="step1">
+<h1>Hey Babuu 😶✨</h1>
+<p>Ek zaroori baat tumse kehni hai... 💌</p>
+<p class="shayari">"Dil ke raaz aksar chup nahi paate... 💖"</p>
+<button class="btn next" onclick="nextStep(2)">Next ➡️</button>
+</div>
+
+<div id="step2" class="hidden">
+<h1>Ruko na 🥺💫</h1>
+<p>Thoda waqt do... 🌸</p>
+<p class="shayari">"Waqt dene se hi rishte aur gehre hote hain... 💕"</p>
+<button class="btn next" onclick="nextStep(3)">Next ➡️</button>
+</div>
+
+<div id="step3" class="hidden">
+<h1>Sun lo 💭❤️</h1>
+<p>Mujhe sach me feel hai... 🌹</p>
+<p class="shayari">"Jo dil se nikle wohi asli hota hai... 💘"</p>
+<button class="btn next" onclick="nextStep(4)">Next ➡️</button>
+</div>
+
+<div id="step4" class="hidden">
+<h1>Ek galti 😔💖</h1>
+<p>Meri hi galti thi... 🫣</p>
+<p class="shayari">"Galtiyaan bhi pyaar ka hissa hoti hain... 🥀"</p>
+<button class="btn next" onclick="nextStep(5)">Next ➡️</button>
+</div>
+
+<div id="step5" class="hidden">
+<h1>Feel karo 💔✨</h1>
+<p>Gussa ho toh bhi sun lo... 💌</p>
+<p class="shayari">"Narazgi me bhi pyaar chhupa hota hai... 💞"</p>
+<button class="btn next" onclick="nextStep(6)">Next ➡️</button>
+</div>
+
+<div id="step6" class="hidden">
+<h1>Almost 🥺🌸</h1>
+<p>Bas thoda aur... 💫</p>
+<p class="shayari">"Maafi se bada koi rishte ka rang nahi... ❤️"</p>
+<button class="btn next" onclick="nextStep(7)">Next ➡️</button>
+</div>
+
+<div id="step7" class="hidden">
+<h1>Ek request ❤️💖</h1>
+<p>Please gussa mat rehna... 🥲</p>
+<p class="shayari">"Ek muskaan hi sab kuch badal sakti hai... 😘"</p>
+<p class="shayari" style="font-weight:bold;">"LEKIN MERI ZINDAGI ME TOH EK HI MUSKAN HAI SIRF TUM 💖✨"</p>
+<button class="btn next" onclick="nextStep(8)">Next ➡️</button>
+</div>
+
+<div id="step8" class="hidden">
+<h1>Bas ek aur step 🥰💫</h1>
+<p>Thoda suspense aur romance... 💕</p>
+<p class="shayari">"Tum meri zindagi ka sabse khoobsurat hissa ho... 💖"</p>
+<button class="btn next" onclick="showFinal()">Next ➡️</button>
+</div>
+
+<div id="step9" class="hidden">
+<h1>Babuu ❤️💌</h1>
+<p id="finalText" class="typing"></p>
+<div class="button-group">
+<button class="btn forgive" onclick="forgive()">Forgive Me ❤️✨</button>
+<button class="btn dont" id="dontBtn">Don't Forgive Me 😈💫</button>
+</div>
+</div>
+
+<div id="success" class="hidden">
+<h1>Yayyy 🥰💖</h1>
+<p>Thank you babuu ❤️<br>Ab kabhi galti nahi hogi 🫂✨</p>
+</div>
+
+<script>
+function nextStep(step){
+    for(let i=1;i<=9;i++) document.getElementById("step"+i).classList.add("hidden");
+    const current = document.getElementById("step"+step);
+    current.classList.remove("hidden");
+    current.classList.add("show");
+    createMagic(1); // Only 1 heart per step
+}
+
+const message=`Hello ji Babu suno I know tum bohot gussa ho merse kyuki Mera hi galti hai 🥲 last time bhi yahi galti kiye the 🥲 babu 👉👈 sorry yaar , ham tumko dhund rahe the ki but aap aise jagah dikh jaoge soche hi nahi the 🥲
+
+Sorry na babuu , aap gussa ho toh mera dimag udhar hi chalega din bhar babuu 🥲
+👉👈 Ek hug karne ka Maan hai yaar zoor se apko 🫂 , 
+
+sorry babuu 👉👈`;
+
+let i=0;
+function typeText(){
+    function typing(){
+        if(i < message.length){
+            document.getElementById("finalText").innerHTML += message.charAt(i);
+            i++;
+            setTimeout(typing, 5);
+        }
+    }
+    typing();
+}
+
+function showFinal(){ nextStep(9); typeText(); }
+function forgive(){
+    document.getElementById("step9").classList.add("hidden");
+    document.getElementById("success").classList.remove("hidden");
+    createMagic(2); // Only a couple hearts for celebration
+}
+
+const btn=document.getElementById("dontBtn");
+btn.addEventListener("click",moveBtn);
+btn.addEventListener("touchstart",moveBtn);
+function moveBtn(e){
+    e.preventDefault();
+    const x=Math.random()*(window.innerWidth-160);
+    const y=Math.random()*(window.innerHeight-70);
+    btn.style.position="fixed";
+    btn.style.left=x+"px";
+    btn.style.top=y+"px";
+}
+
+function createMagic(count=1){ // Minimal hearts
+    for(let j=0;j<count;j++){
+        setTimeout(()=>{
+            const magic = document.createElement("div");
+            magic.classList.add("magic");
+            magic.innerHTML = Math.random()>0.5 ? "❤️" : "✨";
+            magic.style.left = Math.random()*100+"vw";
+            magic.style.fontSize = (Math.random()*25+15)+"px";
+            document.body.appendChild(magic);
+            setTimeout(()=>magic.remove(),4000);
+        }, 300);
+    }
+}
+</script>
+</body>
+</html>
